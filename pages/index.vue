@@ -1,22 +1,24 @@
 <template>
   <div class="d-flex flex-column">
 
-    <!-- <div class="nav-bar">
-        <v-card width="500" class="rounded-lg py-4 px-13 d-flex justify-space-between">
-          <p>About</p>
-          <p>Journey</p>
-          <p>What I Do</p>
-          <p>Recommendations</p>
+    <div class="nav-bar d-flex justify-center">
+      <div style="width:600px;">
+        <v-card width="600" class="rounded-lg py-4 px-13 d-flex justify-space-between elevation-10" style="position: fixed;z-index: 5;left: auto;top: 50px;">
+          <v-btn text class="font-weight-bold">About</v-btn>
+          <v-btn text class="font-weight-bold">Journey</v-btn>
+          <v-btn text class="font-weight-bold">What I Do</v-btn>
+          <v-btn text class="font-weight-bold">Recommendations</v-btn>
         </v-card>
-    </div> -->
+      </div>
+    </div>
 
     <div class="greeting-section" style="position:relative">
       <img src="/bg-1.png" width="100%">
-      <div class="d-flex justify-center" style="position:absolute;width:100%;z-index:2;top:100px">
+      <div class="d-flex justify-center" style="position:absolute;width:100%;z-index:2;top:200px">
         <img src="/sparkling.gif" width="800px">
       </div>
 
-      <div class="d-flex justify-space-between" style="position:absolute;z-index:3;top:100px;width:100%;padding: 0 100px" >
+      <div class="d-flex justify-space-between" style="position:absolute;z-index:3;top:200px;width:100%;padding: 100px" >
         <div style="width:33%">
           <p class="for-title"> HELLO, </p>
           <p class="for-title" > <span style="color:#2EC4B6 !important"> ALFIANA'S </span> HERE!</p>
@@ -34,11 +36,14 @@
       </div>
     </div>
 
-    <div class="about-section d-flex justify-space-between" style="padding:0 100px">
+    <div class="about-section d-flex justify-space-between" style="padding:100px">
       <div style="width:50%;position:relative" class="d-flex justify-center">
         <img src="/bg-sun.png" width="430" height="430">
-        <img src="/alfiana.png" width="260" style="position:absolute;z-index:2">
-        <v-card  style="position:absolute;z-index:3;bottom:10px"> Alfiana Cendani Putri</v-card>
+        <div style="position:absolute;z-index:2">
+          <img src="/alfiana.png" width="260" style="">
+          <v-card class="rounded-xl" style="z-index:3;bottom:10px;width:fit-content"> <p class="text-center px-13 py-2 ">Alfiana Cendani Putri</p></v-card>
+        </div>
+        
       </div>
       <div style="width:50%;height:fit-content;margin:auto">
         <p class="about-title"> I am <span style="color:#2EC4B6">Alfiana</span></p>
@@ -56,10 +61,10 @@
       </div>
     </div>
     
-    <div class="journey-section mt-13">
-      <div style="margin:auto;width:fit-content">
+    <div class="journey-section mt-13" style="padding:100px">
+      <div style="margin:auto;width:fit-content" class="mb-13">
         <p class="title-section text-center"> WANT TO KNOW <span style="color:#2EC4B6" >MY JOURNEY? </span></p>
-        <p class="title-section text-center"> LET’S FIND OUT WITH CLICK THE PLANETS!</p>
+        <p class="title-section text-center" style="position:relative;z-index:2"> LET’S FIND OUT WITH CLICK THE PLANETS!</p>
 
         <div style="position:relative">
           <div class="d-flex justify-end" style="position:relative;bottom:20px;z-index:0;right:0">
@@ -70,10 +75,10 @@
       
     </div>
 
-    <div class="whatIDo-section justify-center" style="padding:0 100px">
+    <div class="whatIDo-section justify-center" style="padding:100px">
 
-      <div style="margin:auto;width:fit-content">
-        <p class="title-section text-center"> WHAT I DO?</p>
+      <div style="margin:auto;width:fit-content" class="mb-13">
+        <p class="title-section text-center " style="position:relative;z-index:2"> WHAT I DO?</p>
         <div style="position:relative">
           <div class="d-flex justify-end" style="position:relative;bottom:20px;z-index:0;right:0">
             <div style="width:90px;height:15px;background-color:#FFBF69;"></div>
@@ -82,7 +87,12 @@
       </div>
 
       <div class="d-flex justify-space-between">
-        <v-card v-for="(item,i) in kindOfWork" :key="i" width="250" height="320"> 
+        <v-card @click="$router.push(item.url)" class="d-flex justify-center pointer elevation-4" v-for="(item,i) in kindOfWork" :key="i" width="250" height="320"> 
+          <div style="width:fit-content;height:fit-content;margin:auto">
+            <img :src="item.img" :width="item.width">
+            <p class="text-center testimonial-title"> {{item.name}}</p>
+          </div>
+          
         </v-card>
       </div>
       
@@ -93,12 +103,15 @@
       <img src="/bg-2.png" width="100%">
       <p class="title-section text-center" style="position:absolute;z-index:2;top:200px;width:100%"> WHAT <span style="color:#2EC4B6">PEOPLE SAY</span> ABOUT ME?</p>
         <div style="position:absolute;z-index:2;top:250px;width:100%">
-          <v-card class="justify-center pa-8 elevation-5 rounded-lg" width="650" style="margin:100px auto;">
+          <v-card class="justify-center pa-8 elevation-5 rounded-xl" width="700" style="margin:100px auto;">
             <div class="d-flex justify-center" > 
               <img src="/alfiana.png" width="65" style="border-radius:65px">
             </div>
             <p class="np-testimoni mt-2">{{selectedTesti.name}} - {{selectedTesti.position}}</p>
             <p class="content-testimoni mt-5">" {{selectedTesti.content}} "</p>
+            <div class="d-flex justify-center mt-3">
+              <div @click="selectedTesti=item" class="mx-1 pointer" :class="item.name == selectedTesti.name?'navigation-testimonials-acctive':'navigation-testimonials'" v-for="(item,i) in testimonials" :key="i" ></div>
+            </div>
           </v-card>
         </div>
         
@@ -142,10 +155,10 @@ export default {
         {name:'Email',url:'',icon:'mdi-email'},
       ],
       kindOfWork:[
-        {name:'Website',img:''},
-        {name:'Microcontroller',img:''},
-        {name:'UI/UX',img:''},
-        {name:'Machine Learning',img:''},
+        {name:'Website',img:'/Website.gif',width:'180',url:'/website'},
+        {name:'Microcontroller',img:'/Microcontroller.gif',width:'180',url:'/microcontroller'},
+        {name:'UI/UX',img:'/Design.gif',width:'180',url:'/ui-ux'},
+        {name:'Machine Learning',img:'/Brain.gif',width:'180',url:'/machine-learning'},
 
       ]
     }
@@ -190,5 +203,21 @@ export default {
   .content-testimoni{
     font-size:0.875rem;
     text-align: center;
+  }
+  .navigation-testimonials{
+    background-color:#ECECEC;
+    width:15px;
+    height:15px;
+    border-radius:15px
+  }
+  .navigation-testimonials-acctive{
+    background-color:   #BEC2CA;
+    width:15px;
+    height:15px;
+    border-radius:15px
+  }
+  .testimonial-title{
+    font-weight: 600;
+    font-size:1.25rem
   }
 </style>
