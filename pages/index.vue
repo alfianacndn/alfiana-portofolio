@@ -72,6 +72,23 @@
           </div>
         </div>
       </div>
+
+      <div style="position:relative">
+        
+        <div class="d-flex justify-space-between" style="position:relative;z-index:2">
+          <img src="/mars.png" width="85" height="85" class="planets-journey">
+          <img src="/earth.png" width="147" height="147" class="planets-journey">
+          <img src="/venus.png" width="147" height="172" class="planets-journey">
+          <img src="/merkurius.png" width="85" height="83" class="planets-journey">
+          <img src="/sun.png" width="414" height="414" class="planets-journey">
+        </div>
+        <div class="d-flex justify-center">
+          <div style="position:absolute;width:90%;border: dashed 3px #14213D;top:212px">
+
+          </div>
+        </div>
+        
+      </div>
       
     </div>
 
@@ -98,7 +115,7 @@
       
     </div>
 
-    <div class="testimonials-section" style="position:relative">
+    <div class="testimonials-section">
       
       <img src="/bg-2.png" width="100%">
       <p class="title-section text-center" style="position:absolute;z-index:2;top:200px;width:100%"> WHAT <span style="color:#2EC4B6">PEOPLE SAY</span> ABOUT ME?</p>
@@ -146,8 +163,10 @@ export default {
       testimonials:[
         {name : 'Welldy Roesman', position: 'Senior Backend Dev at ATT Group', content:"Working with Alfiana is an absolute joy! Her passion for Vue and Laravel coding, coupled with a cheerful attitude, makes every project a delightful experience. Alfiana's dedication to learning and attention to detail create a positive and collaborative work environment. Lucky to have her on the team! 🚀😊"},
         {name : 'Fida Ghaida', position:'Software Quality Assurance at Toko Rumahan', content:"I had the pleasure of working alongside Alfiana, and I can confidently say that she is a passionate and hardworking individual. As a frontend developer, Alfiana consistently demonstrated her ability to tackle challenges that arise during the application development process. She combines technical expertise with a keen eye for design. Her attention to detail, problem-solving skills, and dedication to creating user-friendly interfaces make her a standout professional. I highly recommend Alfiana for her exceptional contributions to frontend development. You're truly impressive, Alfiana!"},
+        {name : 'Dania Azzahra', position:'',content:'It was such a wonderful experience by working with Alfiana! I had one of the best time in my life to work and learn in the same team as her. The passion she has for her role has always been so amazing and incredible. The way of her handling issues just show how much of a professional she is with such a great personality. With that much passions and professionalism, I would encourage anyone to trust her with their IT (mainly Front End side) matters to Alfiana. So happy that we have been working on stuff together, I feel honored to work with her and would look forward to more projects for us to collaborate again.'},
         {name : 'Tabita Ragilia', position:'', content:'The ability to create a web is very good, fast, neat, and responsible, and the results are up to 100% according to customer requests 👍🏻.'},
         {name : 'Diana NS', position:'Production Supervisor at Perfetti Van Melle', content:'have the ability to create a front end that is user friendly and eye catching'}
+        
       ],
       socialMedia:[
         {name:'Github',url:'',icon:'mdi-github'},
@@ -219,5 +238,13 @@ export default {
   .testimonial-title{
     font-weight: 600;
     font-size:1.25rem
+  }
+  .planets-journey{
+    margin:auto 20px;
+    cursor: pointer
+  }
+  .testimonials-section{
+    height: 812px;
+    position: relative;
   }
 </style>
