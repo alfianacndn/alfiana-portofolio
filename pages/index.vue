@@ -29,7 +29,7 @@
     <div v-if="$vuetify.breakpoint.width>1024" class="greeting-section" style="position:relative">
       <img src="/bg-1.png" width="100%">
       <div class="d-flex justify-center" style="position:absolute;width:100%;z-index:2;top:200px">
-        <img src="/sparkling.gif" :width="$vuetify.breakpoint.width>1024?'800px':'fit-content'">
+        <img src="/sparkling.gif" :width="$vuetify.breakpoint.width>1024?'800px':'fit-content'" >
       </div>
 
       <div class="d-flex justify-space-between content-greeting" style="" >
@@ -237,7 +237,7 @@ export default {
         {name : 'Tabita Ragilia', img:'/Tabita.jpg', position:'', content:'The ability to create a web is very good, fast, neat, and responsible, and the results are up to 100% according to customer requests 👍🏻.'},
         {name : 'Diana NS', img:'/Diana.jpg', position:'Production Supervisor at Perfetti Van Melle', content:'have the ability to create a front end that is user friendly and eye catching'}
       ],
-      skills:['Vue.Js','Nuxt.Js','Laravel','Code Igniter','Bootstrap', 'Vuetify','Tailwind', 'MYSQL','Firebase','Data Visualization','Figma', 'Postman','Git', 'Microcontroller Programming'],
+      skills:['Vue.Js','Nuxt.Js','Laravel','Code Igniter','Bootstrap', 'Vuetify','Tailwind', 'Arcgis Javascript','Mapbox','MYSQL','Firebase','Data Visualization','Figma', 'Postman','Git', 'Microcontroller Programming'],
       socialMedia:[
         {name:'Github',url:'https://github.com/alfianacndn/',icon:'mdi-github'},
         {name:'Linkedin',url:'https://www.linkedin.com/in/alfianacendani/',icon:'mdi-linkedin'},

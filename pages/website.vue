@@ -1,22 +1,26 @@
 <template>
   <div style="background-color:#f5f5f5">
 
-    <div class="header-section d-flex flex-row elevation-5 pa-10">
+    <div v-if="$vuetify.breakpoint.width>600" class="header-section d-flex flex-row elevation-5 pa-10">
       <div style="width:5%">
         <v-icon @click="$router.push('/')" style="margin:auto;color:#14213D" size="30"> mdi-arrow-left</v-icon>
       </div>
       <div style="width:95%">
         <div style="margin:auto;width:fit-content">
-        <p class="title-section text-center " style="position:relative;z-index:2"> WEBSITE DEVELOPMENT</p>
-        <div style="position:relative">
-          <div class="d-flex justify-end" style="position:relative;bottom:20px;z-index:0;right:0">
-            <div style="width:260px;height:15px;background-color:#FFBF69;"></div>
+          <p class="title-section text-center " style="position:relative;z-index:2"> WEBSITE DEVELOPMENT</p>
+          <div style="position:relative">
+            <div class="d-flex justify-end" style="position:relative;bottom:20px;z-index:0;right:0">
+              <div style="width:260px;height:15px;background-color:#FFBF69;"></div>
+            </div>
           </div>
         </div>
       </div>
-      </div>
-      
     </div>
+    <v-app-bar v-else class="elevation-3 app-bar "  app clipped-left flat light style="z-index:99;width:100%;background-color:white">
+        <v-icon @click="$router.push('/')" style="margin:auto;color:#14213D" size="30"> mdi-arrow-left</v-icon>
+      <v-spacer></v-spacer>
+        <p class="font-weight-bold"> Website Development </p>
+    </v-app-bar>
 
     <div class="tech-section mt-13">
       <p class="title-content mb-3"> Tech Stack</p>
@@ -111,6 +115,23 @@ export default {
 </script>
 
 <style scoped>
+ @media only screen and (max-width:425px){
+  .tech-section,.content-section{
+    padding:  0 30px !important;
+  }
+  .tech-section{
+    padding-top:50px !important
+  }
+ }
+ @media  (min-width:426px) and (max-width:600px) {
+  .tech-section,.content-section{
+    padding:  0 50px !important;
+
+  }
+  .tech-section{
+    padding-top:50px !important
+  }
+ }
   p{
     margin:0;
     color : #14213D;
@@ -127,7 +148,7 @@ export default {
   }
 
   .tech-section{
-    padding-top:150px
+    padding-top:150px 
   }
 
   .title-content{
