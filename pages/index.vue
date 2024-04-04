@@ -130,13 +130,29 @@
 
       <div style="position:relative">
         
-        <div :class="$vuetify.breakpoint.width>600?'d-flex justify-space-between':'d-flex flex-column'"  style="position:relative;z-index:2">
+        <div v-if="$vuetify.breakpoint.width<=600" :class="$vuetify.breakpoint.width>600?'d-flex justify-space-between':'d-flex flex-column'"  style="position:relative;z-index:2">
           <v-menu offset-x v-for="(item,i) in planets" :key="i">
             <template v-slot:activator="{ on, attrs }">
-              <div v-if="$vuetify.breakpoint.width<600" class="d-flex justify-center">
+              <div  class="d-flex justify-center">
                 <img v-bind="attrs" v-on="on"  :src="item.img"  class="planets-journey" :class="item.name">
               </div>
-              <img v-if="$vuetify.breakpoint.width>600" v-bind="attrs" v-on="on"  :src="item.img"  class="planets-journey" :class="item.name">
+            </template>
+            <v-card width="500" class="pa-5 ">
+              <div class="py-2 px-5 d-flex justify-center" style="border-radius:0;margin:auto;background-color:#FFBF69;width:fit-content;height:fit-content">
+                <p class="title-journey-section " style="width:fit-content">{{item.year}}</p>
+              </div>
+              <div class="mb-2 mt-3" v-for="(content,j) in item.content" :key="j">
+                <p class="content-journey-section" > <span style="font-weight:600;font-size:1rem"> {{content.name}} </span> ({{content.date}}) </p>
+                <p class="content-journey-section"> {{content.task}}</p>
+              </div>
+            </v-card>
+          </v-menu>
+        </div>
+        <div v-if="$vuetify.breakpoint.width>600" :class="$vuetify.breakpoint.width>600?'d-flex justify-space-between':'d-flex flex-column'"  style="position:relative;z-index:2">
+          <v-menu offset-x v-for="(item,i) in planets" :key="i">
+            <template v-slot:activator="{ on, attrs }">
+              
+              <img  v-bind="attrs" v-on="on"  :src="item.img"  class="planets-journey" :class="item.name">
 
             </template>
             <v-card width="500" class="pa-5 ">
