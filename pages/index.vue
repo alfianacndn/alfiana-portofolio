@@ -34,18 +34,18 @@
 
       <div class="d-flex justify-space-between content-greeting" style="" >
         <div style="width:33%">
-          <p class="for-title"> HELLO, </p>
-          <p class="for-title" > <span style="color:#2EC4B6 !important"> ALFIANA'S </span> HERE!</p>
-          <p class="for-desc-title"> Passionate to creating experience that easy to use!  </p>
-          <p class="for-desc-title mt-13"> Want to know how  my universe unfolds?</p>
+          <p  class="for-title slide-right"> HELLO, </p>
+          <p class="for-title slide-right" > <span style="color:#2EC4B6 !important"> ALFIANA'S </span> HERE!</p>
+          <p class="for-desc-title slide-right"> Passionate to creating experience that easy to use!  </p>
+          <p class="for-desc-title mt-13 slide-up"> Want to know how  my universe unfolds?</p>
         </div>
         <div style="width:33%" class="d-flex justify-center">
           <img src="/rotating-earth.gif" width="100%" height="auto" class="rotating-earth" :style="$vuetify.breakpoint.width>1024?'margin-top:100px':''">
         </div>
         <div style="width:33%">
-          <p class="text-right for-title " style="margin-top:95px"> A professional </p>
-          <p class="text-right for-title" style="color:#2EC4B6 !important"> Website Developer</p>
-          <p class="text-right for-desc-title mt-13"> Explore to know me better !</p>
+          <p class="text-right for-title slide-left" style="margin-top:95px"> A professional </p>
+          <p class="text-right for-title slide-left" style="color:#2EC4B6 !important"> Website Developer</p>
+          <p class="text-right for-desc-title mt-13 slide-up"> Explore to know me better !</p>
         </div>
       </div>
     </div>
@@ -57,16 +57,16 @@
 
       <div class="d-flex justify-space-between content-greeting">
         <div style="width:55%">
-          <p class="for-title"> HELLO, </p>
-          <p class="for-title" > <span style="color:#2EC4B6 !important"> ALFIANA'S </span> HERE!</p>
-          <p class="for-sub-desc-title mb-5" > A professional <span style="color:#2EC4B6 !important"> Website Developer  </span></p>
+          <p class="for-title slide-right"> HELLO, </p>
+          <p class="for-title slide-right" > <span style="color:#2EC4B6 !important"> ALFIANA'S </span> HERE!</p>
+          <p class="for-sub-desc-title mb-5 slide-right" > A professional <span style="color:#2EC4B6 !important"> Website Developer  </span></p>
           
-          <p class="for-desc-title"> Passionate to creating experience that easy to use! Want to know how  my universe unfolds? </p>
-          <p class="for-desc-title mt-5"> Explore to know me better!</p>
+          <p class="for-desc-title slide-up"> Passionate to creating experience that easy to use! Want to know how  my universe unfolds? </p>
+          <p class="for-desc-title mt-5 slide-up"> Explore to know me better!</p>
 
         </div>
         <div style="width:40%" class="d-flex justify-center">
-          <img src="/rotating-earth.gif" class="rotating-earth" width="100%" height="auto" :style="$vuetify.breakpoint.width>1024?'margin-top:100px':''">
+          <img src="/rotating-earth.gif" class="rotating-earth slide-left"  width="100%" height="auto" :style="$vuetify.breakpoint.width>1024?'margin-top:100px':''">
         </div>
         <!-- <div style="width:33%">
           <p class="text-right for-title " style="margin-top:95px"> A professional </p>
@@ -79,7 +79,7 @@
 
     <div id="about" class="about-section" >
       <div :class="$vuetify.breakpoint.width>600? 'd-flex justify-space-between':''" >
-        <div  class="d-flex justify-center img-about">
+        <div id="slideRight2" class="d-flex justify-center img-about opacity-0">
           <img src="/bg-sun.png" class="sun-about-section" :width="$vuetify.breakpoint.width>1024?'430':'100%'" height="fit-content">
           <div style="position:absolute;z-index:2">
             <div class="d-flex justify-center">
@@ -92,14 +92,14 @@
           
         </div>
         <div class="content-about" :class="$vuetify.breakpoint.width>600?'':'mt-13'">
-          <p class="about-title"> I am <span style="color:#2EC4B6">Alfiana</span></p>
-          <p class="about-desc"> A professional developer with 3 years of experience. With a strong passion for information and 
+          <p id="showUp1" class="about-title opacity-0"> I am <span style="color:#2EC4B6">Alfiana</span></p>
+          <p id="slideUp3" class="about-desc opacity-0"> A professional developer with 3 years of experience. With a strong passion for information and 
             technology, my background in mechatronic engineering from an Indonesian university (graduated in 2021) 
             fuels my love for space exploration. I aspire to create my own space in the digital world. Scroll down 
             to discover how my universe unfolds!
           </p>
-          <p class="mt-4">Find me on my social media :</p>
-          <div class="d-flex flex-row mt-1">
+          <p id="slideUp4" class="mt-4 opacity-0">Find me on my social media :</p>
+          <div id="slideLeft3" class="d-flex flex-row mt-1 opacity-0">
             <div @click="goTo(item.url)" v-for="(item,i) in socialMedia" :key="i" style="background-color:#F5F5F5" class="py-2 px-4 pointer" :class="i==1?'mx-3':''">
               <p style="color:#2EC4B6 "> {{item.name}}</p>
             </div>
@@ -107,9 +107,9 @@
         </div>
       </div>
       <div class="about-skill">
-        <p class="text-center mb-4" style="font-size:1rem;font-weight:bold"> SKILLS</p>
-        <div class="d-flex justify-center" style="display:flex;flex-wrap:wrap">
-          <div v-for="(skill,i) in skills" :key="i" style="background-color:#F5F5F5" class="py-2 px-4 mb-3" :class="i!==0?'mx-3':''">
+        <p id="slideUp5" class="text-center mb-4 opacity-0" style="font-size:1rem;font-weight:bold"> SKILLS</p>
+        <div id="slideUp9" class="opacity-0 d-flex justify-center " style="display:flex;flex-wrap:wrap">
+          <div  v-for="(skill,i) in skills" :key="i" style="background-color:#F5F5F5" class="py-2 px-4 mb-3 " :class="i!==0?'mx-3':''">
             <p>{{skill}} </p>
           </div>
         </div>
@@ -117,7 +117,7 @@
     </div>
     
     <div id="journey" class="journey-section mt-13" >
-      <div style="margin:auto;width:fit-content" class="mb-13">
+      <div id="slideUp6" style="margin:auto;width:fit-content" class="mb-13 opacity-0">
         <p class="title-section text-center"> WANT TO KNOW <span style="color:#2EC4B6" >MY JOURNEY? </span></p>
         <p class="title-section text-center" style="position:relative;z-index:2"> LET’S FIND OUT WITH <span :style="$vuetify.breakpoint.width>768?'':'color:#FFBF69'">CLICK THE PLANETS!</span></p>
 
@@ -148,12 +148,10 @@
             </v-card>
           </v-menu>
         </div>
-        <div v-if="$vuetify.breakpoint.width>600" :class="$vuetify.breakpoint.width>600?'d-flex justify-space-between':'d-flex flex-column'"  style="position:relative;z-index:2">
+        <div class=""  v-if="$vuetify.breakpoint.width>600" :class="$vuetify.breakpoint.width>600?'d-flex justify-space-between':'d-flex flex-column'"  style="position:relative;z-index:2">
           <v-menu offset-x v-for="(item,i) in planets" :key="i">
             <template v-slot:activator="{ on, attrs }">
-              
-              <img  v-bind="attrs" v-on="on"  :src="item.img"  class="planets-journey" :class="item.name">
-
+              <img   v-bind="attrs" v-on="on"  :src="item.img"  class="planets-journey" :class="item.name">
             </template>
             <v-card width="500" class="pa-5 ">
               <div class="py-2 px-5 d-flex justify-center" style="border-radius:0;margin:auto;background-color:#FFBF69;width:fit-content;height:fit-content">
@@ -166,8 +164,8 @@
             </v-card>
           </v-menu>
         </div>
-        <div class="d-flex justify-center" v-if="$vuetify.breakpoint.width>600">
-          <div class="planets-line">
+        <div  class="d-flex justify-center" v-if="$vuetify.breakpoint.width>600">
+          <div   class="planets-line ">
 
           </div>
         </div>
@@ -178,8 +176,8 @@
 
     <div id="whatido" class="whatIDo-section justify-center" style="">
 
-      <div style="margin:auto;width:fit-content" class="mb-13">
-        <p class="title-section text-center " style="position:relative;z-index:2"> WHAT I DO?</p>
+      <div id="slideUp7" style="margin:auto;width:fit-content" class="mb-13 opacity-0">
+        <p  class="title-section text-center " style="position:relative;z-index:2"> WHAT I DO?</p>
         <div style="position:relative">
           <div class="d-flex justify-end" style="position:relative;bottom:20px;z-index:0;right:0">
             <div style="width:90px;height:15px;background-color:#FFBF69;"></div>
@@ -187,7 +185,7 @@
         </div>
       </div>
 
-      <div class="d-flex justify-center" style="display:flex;flex-wrap:wrap">
+      <div class=" d-flex justify-center" style="display:flex;flex-wrap:wrap">
         <v-card @click="$router.push(item.url)" class="d-flex justify-center pointer elevation-4 mx-4 my-4" v-for="(item,i) in kindOfWork" :key="i" width="250" height="320"> 
           <div style="width:fit-content;height:fit-content;margin:auto" >
             <img :src="item.img" :width="item.width">
@@ -203,7 +201,7 @@
       
       <img src="/bg-2.png" class="bg-recommendations"  width="100%">
       <div class="d-flex justify-center">
-        <p class="title-section title-recommendations text-center" style=""> WHAT <span style="color:#2EC4B6">PEOPLE SAY</span> ABOUT ME?</p>
+        <p id="slideUp8" class="opacity-0 title-section title-recommendations text-center" style=""> WHAT <span style="color:#2EC4B6">PEOPLE SAY</span> ABOUT ME?</p>
       </div>
         <div class="card-recommendations">
           <v-card class="justify-center pa-8 elevation-5 rounded-xl" :width="$vuetify.breakpoint.width>768?'700':'80%'" style="margin:100px auto;">
@@ -249,8 +247,8 @@ export default {
         {name : 'Welldy Roesman', img:'/Welldy.jpg', position: 'Senior Backend Dev at ATT Group', content:"Working with Alfiana is an absolute joy! Her passion for Vue and Laravel coding, coupled with a cheerful attitude, makes every project a delightful experience. Alfiana's dedication to learning and attention to detail create a positive and collaborative work environment. Lucky to have her on the team! 🚀😊"},
         {name : 'Haikal Muhammad', img:'/Haikal.jpg', position: 'Project Manager at Cityplan Indonesia', content:"Alfi is excellent on her feet. She demonstrated her expertise in frontend development since her first year, a cornerstone to some of our most influential projects. It was a pleasure to have her on my team, she exercised initiative, product acumen, effective communication, and serves only quality deliverables time after time."},
         {name : 'Fida Ghaida', img:'/Fida.jpg', position:'Software Quality Assurance at Toko Rumahan', content:"I had the pleasure of working alongside Alfiana, and I can confidently say that she is a passionate and hardworking individual. As a frontend developer, Alfiana consistently demonstrated her ability to tackle challenges that arise during the application development process. She combines technical expertise with a keen eye for design. Her attention to detail, problem-solving skills, and dedication to creating user-friendly interfaces make her a standout professional. I highly recommend Alfiana for her exceptional contributions to frontend development. You're truly impressive, Alfiana!"},
-        {name : 'Dania Azzahra', img:'/Dania.jpg', position:'',content:'It was such a wonderful experience by working with Alfiana! I had one of the best time in my life to work and learn in the same team as her. The passion she has for her role has always been so amazing and incredible. The way of her handling issues just show how much of a professional she is with such a great personality. With that much passions and professionalism, I would encourage anyone to trust her with their IT (mainly Front End side) matters to Alfiana. So happy that we have been working on stuff together, I feel honored to work with her and would look forward to more projects for us to collaborate again.'},
-        {name : 'Tabita Ragilia', img:'/Tabita.jpg', position:'', content:'The ability to create a web is very good, fast, neat, and responsible, and the results are up to 100% according to customer requests 👍🏻.'},
+        {name : 'Dania Azzahra', img:'/Dania.jpg', position:'Backend Developer at Maxximum',content:'It was such a wonderful experience by working with Alfiana! I had one of the best time in my life to work and learn in the same team as her. The passion she has for her role has always been so amazing and incredible. The way of her handling issues just show how much of a professional she is with such a great personality. With that much passions and professionalism, I would encourage anyone to trust her with their IT (mainly Front End side) matters to Alfiana. So happy that we have been working on stuff together, I feel honored to work with her and would look forward to more projects for us to collaborate again.'},
+        {name : 'Tabita Ragilia', img:'/Tabita.jpg', position:'Dealku Legal', content:'The ability to create a web is very good, fast, neat, and responsible, and the results are up to 100% according to customer requests 👍🏻.'},
         {name : 'Diana NS', img:'/Diana.jpg', position:'Production Supervisor at Perfetti Van Melle', content:'have the ability to create a front end that is user friendly and eye catching'}
       ],
       skills:['Vue.Js','Nuxt.Js','Laravel','Code Igniter','Bootstrap', 'Vuetify','Tailwind', 'Arcgis Javascript','Mapbox','MYSQL','Firebase','Data Visualization','Figma', 'Postman','Git', 'Microcontroller Programming'],
@@ -293,6 +291,140 @@ export default {
     goTo(val){
       window.open(val)
     },
+    observer(){
+      const slideRight = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('slide-right');
+            }
+          });
+        },
+        {
+          threshold: 0.5,
+        }
+      );
+      const slideLeft = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('slide-left');
+            }
+          });
+        },
+        {
+          threshold: 0.5,
+        }
+      );
+      const slideUp = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('slide-up');
+            }
+          });
+        },
+        {
+          threshold: 0.5,
+        }
+      );
+      const slideDown = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('slide-down');
+            }
+          });
+        },
+        {
+          threshold: 0.5,
+        }
+      );
+      const showUp = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('show-up');
+            }
+          });
+        },
+        {
+          threshold: 0.5,
+        }
+      );
+      
+      if (document.getElementById('slideRight1')) {
+        slideRight.observe(document.getElementById('slideRight1'));
+      }
+      if (document.getElementById('slideRight2')) {
+        slideRight.observe(document.getElementById('slideRight2'));
+      }
+      if (document.getElementById('slideRight3')) {
+        slideRight.observe(document.getElementById('slideRight3'));
+      }
+
+      if (document.getElementById('slideLeft1')) {
+        slideLeft.observe(document.getElementById('slideLeft1'));
+      }
+      if (document.getElementById('slideLeft2')) {
+        slideLeft.observe(document.getElementById('slideLeft2'));
+      }
+      if (document.getElementById('slideLeft3')) {
+        slideLeft.observe(document.getElementById('slideLeft3'));
+      }
+      if (document.getElementById('slideLeft4')) {
+        slideLeft.observe(document.getElementById('slideLeft4'));
+      }
+      if (document.getElementById('slideLeft5')) {
+        slideLeft.observe(document.getElementById('slideLeft5'));
+      }
+
+      if (document.getElementById('slideDown1')) {
+        slideDown.observe(document.getElementById('slideDown1'));
+      }
+
+      if (document.getElementById('slideUp1')) {
+        slideUp.observe(document.getElementById('slideUp1'));
+      }
+      if (document.getElementById('slideUp2')) {
+        slideUp.observe(document.getElementById('slideUp2'));
+      }
+      if (document.getElementById('slideUp3')) {
+        slideUp.observe(document.getElementById('slideUp3'));
+      }
+      if (document.getElementById('slideUp4')) {
+        slideUp.observe(document.getElementById('slideUp4'));
+      }
+      if (document.getElementById('slideUp5')) {
+        slideUp.observe(document.getElementById('slideUp5'));
+      }
+      if (document.getElementById('slideUp6')) {
+        slideUp.observe(document.getElementById('slideUp6'));
+      }
+      if (document.getElementById('slideUp7')) {
+        slideUp.observe(document.getElementById('slideUp7'));
+      }
+      if (document.getElementById('slideUp8')) {
+        slideUp.observe(document.getElementById('slideUp8'));
+      }
+      if (document.getElementById('slideUp9')) {
+        slideUp.observe(document.getElementById('slideUp9'));
+      }
+      if (document.getElementById('slideUp10')) {
+        slideUp.observe(document.getElementById('slideUp10'));
+      }
+
+      if (document.getElementById('showUp1')) {
+        showUp.observe(document.getElementById('showUp1'));
+      }
+      if (document.getElementById('showUp2')) {
+        showUp.observe(document.getElementById('showUp2'));
+      }
+    }
+  },
+  beforeMount(){
+    console.log('cekkk')
+    this.observer()
   }
 }
 </script>
@@ -666,7 +798,7 @@ export default {
     }
     
   }
-
+  
   p{
     margin:0;
     color : #14213D;
