@@ -186,7 +186,7 @@
       </div>
 
       <div class=" d-flex justify-center" style="display:flex;flex-wrap:wrap">
-        <v-card @click="$router.push(item.url)" class="d-flex justify-center pointer elevation-4 mx-4 my-4" v-for="(item,i) in kindOfWork" :key="i" width="250" height="320"> 
+        <v-card @click="goToWork(item.url)" class="d-flex justify-center pointer elevation-4 mx-4 my-4" v-for="(item,i) in kindOfWork" :key="i" width="250" height="320"> 
           <div style="width:fit-content;height:fit-content;margin:auto" >
             <img :src="item.img" :width="item.width">
             <p class="text-center testimonial-title"> {{item.name}}</p>
@@ -290,6 +290,10 @@ export default {
   methods:{
     goTo(val){
       window.open(val)
+    },
+    goToWork(val){
+      this.$router.push(val)
+      this.$store.commit('setSelectedPage', JSON.stringify(val))
     },
     observer(){
       const slideRight = new IntersectionObserver(
@@ -424,7 +428,15 @@ export default {
   },
   beforeMount(){
     console.log('cekkk')
+    this.$store.commit('setSelectedPage', JSON.stringify('/'))
     this.observer()
+  },
+  watch: {
+    "$store.state.selectedPage": {
+      handler: function(val) {
+        this.observer()
+      },
+    },
   }
 }
 </script>

@@ -93,6 +93,16 @@ export default {
     goTo(val){
       window.open(val)
     },
+  },
+  beforeMount(){
+    this.$store.commit('setSelectedPage', JSON.stringify('/machine-learning'))
+  },
+  watch: {
+    "$store.state.selectedPage": {
+      handler: function(val) {
+        this.observer()
+      },
+    },
   }
 }
 </script>
