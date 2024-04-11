@@ -3,7 +3,7 @@
     
     <div v-if="$vuetify.breakpoint.width>600" class="nav-bar d-flex justify-center">
       <div style="width:600px;">
-        <v-card width="600" class="rounded-lg py-4 px-13 d-flex justify-space-between elevation-10" style="position: fixed;z-index: 99;left: auto;top: 50px;">
+        <v-card width="600" class="rounded-lg py-4 px-13 d-flex justify-space-between elevation-10 card-navbar" >
           <v-btn text class="font-weight-bold" href="#about">About</v-btn>
           <v-btn text class="font-weight-bold" href="#journey">Journey</v-btn>
           <v-btn text class="font-weight-bold" href="#whatido">What I Do</v-btn>
@@ -11,28 +11,27 @@
         </v-card>
       </div>
     </div>
-    <v-app-bar v-else class="elevation-3 app-bar d-flex justify-end"  app clipped-left flat light style="z-index:99;width:100%;background-color:white">
-        
-         <v-menu offset-y>
-          <template v-slot:activator="{ on, attrs }" >
-            <v-icon class="mr-3 py-0 my-0" style="margin:auto 0 !important;height:fit-content" v-bind="attrs" v-on="on" > mdi-menu</v-icon>
-          </template>
-          <v-list class="pa-3 pointer">
-            <v-btn text class="font-weight-bold" href="#about">About</v-btn>
-            <v-btn text class="font-weight-bold" href="#journey">Journey</v-btn>
-            <v-btn text class="font-weight-bold" href="#whatido">What I Do</v-btn>
-            <v-btn text class="font-weight-bold" href="#recommendations">Recommendations</v-btn>
-          </v-list>
-        </v-menu>
+    <v-app-bar v-else class="elevation-3 app-bar d-flex justify-end card-navbar-mobile"  app clipped-left flat light >
+      <v-menu offset-y>
+        <template v-slot:activator="{ on, attrs }" >
+          <v-icon class="mr-3 py-0 my-0 fit-icon"  v-bind="attrs" v-on="on" > mdi-menu</v-icon>
+        </template>
+        <v-list class="pa-3 pointer">
+          <v-btn text class="font-weight-bold" href="#about">About</v-btn>
+          <v-btn text class="font-weight-bold" href="#journey">Journey</v-btn>
+          <v-btn text class="font-weight-bold" href="#whatido">What I Do</v-btn>
+          <v-btn text class="font-weight-bold" href="#recommendations">Recommendations</v-btn>
+        </v-list>
+      </v-menu>
     </v-app-bar>
 
-    <div v-if="$vuetify.breakpoint.width>1024" class="greeting-section" style="position:relative">
+    <div v-if="$vuetify.breakpoint.width>1024" class="relative-position">
       <img src="/bg-1.png" width="100%">
-      <div class="d-flex justify-center" style="position:absolute;width:100%;z-index:2;top:200px">
+      <div class="d-flex justify-center sparkling-desktop">
         <img src="/sparkling.gif" :width="$vuetify.breakpoint.width>1024?'800px':'fit-content'" >
       </div>
 
-      <div class="d-flex justify-space-between content-greeting" style="" >
+      <div class="d-flex justify-space-between content-greeting" >
         <div style="width:33%">
           <p  class="for-title slide-right"> HELLO, </p>
           <p class="for-title slide-right" > <span style="color:#2EC4B6 !important"> ALFIANA'S </span> HERE!</p>
@@ -49,9 +48,9 @@
         </div>
       </div>
     </div>
-    <div v-else class="greeting-section" style="position:relative">
+    <div v-else class="relative-position" >
       <img src="/bg-1.png" width="100%">
-      <div class="d-flex justify-center" style="position:absolute;width:100%;z-index:2;top:200px">
+      <div class="d-flex justify-center sparkling-desktop" >
         <img src="/sparkling.gif" :width="$vuetify.breakpoint.width>1024?'800px':'100%'">
       </div>
 
@@ -60,33 +59,25 @@
           <p class="for-title slide-right"> HELLO, </p>
           <p class="for-title slide-right" > <span style="color:#2EC4B6 !important"> ALFIANA'S </span> HERE!</p>
           <p class="for-sub-desc-title mb-5 slide-right" > A professional <span style="color:#2EC4B6 !important"> Website Developer  </span></p>
-          
           <p class="for-desc-title slide-up"> Passionate to creating experience that easy to use! Want to know how  my universe unfolds? </p>
           <p class="for-desc-title mt-5 slide-up"> Explore to know me better!</p>
-
         </div>
         <div style="width:40%" class="d-flex justify-center">
           <img src="/rotating-earth.gif" class="rotating-earth slide-left"  width="100%" height="auto" :style="$vuetify.breakpoint.width>1024?'margin-top:100px':''">
         </div>
-        <!-- <div style="width:33%">
-          <p class="text-right for-title " style="margin-top:95px"> A professional </p>
-          <p class="text-right for-title" style="color:#2EC4B6 !important"> Website Developer</p>
-          <p class="text-right for-desc-title mt-13"> Explore to know me better !</p>
-        </div> -->
       </div>
-
     </div>
 
     <div id="about" class="about-section" >
       <div :class="$vuetify.breakpoint.width>600? 'd-flex justify-space-between':''" >
         <div id="slideRight2" class="d-flex justify-center img-about opacity-0">
           <img src="/bg-sun.png" class="sun-about-section" :width="$vuetify.breakpoint.width>1024?'430':'100%'" height="fit-content">
-          <div style="position:absolute;z-index:2">
+          <div class="alfiana-img-section">
             <div class="d-flex justify-center">
               <img src="/alfiana.png" :width="$vuetify.breakpoint.width>1024?'260':'70%'" style="">
             </div>
             <div class="d-flex justify-center">
-              <v-card class="rounded-xl" style="z-index:3;bottom:10px;width:fit-content"> <p class="text-center px-13 py-2 ">Alfiana Cendani Putri</p></v-card>
+              <v-card class="rounded-xl alfiana-name-card" > <p class="text-center px-13 py-2 ">Alfiana Cendani Putri</p></v-card>
             </div>
           </div>
           
@@ -107,8 +98,8 @@
         </div>
       </div>
       <div class="about-skill">
-        <p id="slideUp5" class="text-center mb-4 opacity-0" style="font-size:1rem;font-weight:bold"> SKILLS</p>
-        <div id="slideUp9" class="opacity-0 d-flex justify-center " style="display:flex;flex-wrap:wrap">
+        <p id="slideUp5" class="text-center mb-4 opacity-0 font-weight-bold" > SKILLS</p>
+        <div id="slideUp9" class="opacity-0 d-flex justify-center flex-wrap " >
           <div  v-for="(skill,i) in skills" :key="i" style="background-color:#F5F5F5" class="py-2 px-4 mb-3 " :class="i!==0?'mx-3':''">
             <p>{{skill}} </p>
           </div>
@@ -119,17 +110,16 @@
     <div id="journey" class="journey-section mt-13" >
       <div id="slideUp6" style="margin:auto;width:fit-content" class="mb-13 opacity-0">
         <p class="title-section text-center"> WANT TO KNOW <span style="color:#2EC4B6" >MY JOURNEY? </span></p>
-        <p class="title-section text-center" style="position:relative;z-index:2"> LET’S FIND OUT WITH <span :style="$vuetify.breakpoint.width>768?'':'color:#FFBF69'">CLICK THE PLANETS!</span></p>
+        <p class="title-section text-center relative-position" style="z-index:2"> LET’S FIND OUT WITH <span :style="$vuetify.breakpoint.width>768?'':'color:#FFBF69'">CLICK THE PLANETS!</span></p>
 
-        <div v-if="$vuetify.breakpoint.width>768" style="position:relative">
-          <div class="d-flex justify-end" style="position:relative;bottom:20px;z-index:0;right:0">
-            <div style="width:325px;height:15px;background-color:#FFBF69;"></div>
+        <div v-if="$vuetify.breakpoint.width>768" class="relative-position">
+          <div class="d-flex justify-end relative-position" style="bottom:20px;z-index:0;right:0">
+            <div class="line-journey" ></div>
           </div>
         </div>
       </div>
 
-      <div style="position:relative">
-        
+      <div class="relative-position">
         <div v-if="$vuetify.breakpoint.width<=600" :class="$vuetify.breakpoint.width>600?'d-flex justify-space-between':'d-flex flex-column'"  style="position:relative;z-index:2">
           <v-menu offset-x v-for="(item,i) in planets" :key="i">
             <template v-slot:activator="{ on, attrs }">
@@ -138,11 +128,11 @@
               </div>
             </template>
             <v-card width="500" class="pa-5 ">
-              <div class="py-2 px-5 d-flex justify-center" style="border-radius:0;margin:auto;background-color:#FFBF69;width:fit-content;height:fit-content">
-                <p class="title-journey-section " style="width:fit-content">{{item.year}}</p>
+              <div class="py-2 px-5 d-flex justify-center title-journey-section" >
+                <p class="title-journey " style="width:fit-content">{{item.year}}</p>
               </div>
               <div class="mb-2 mt-3" v-for="(content,j) in item.content" :key="j">
-                <p class="content-journey-section" > <span style="font-weight:600;font-size:1rem"> {{content.name}} </span> ({{content.date}}) </p>
+                <p class="content-journey-section" > <span style="font-weight:600;"> {{content.name}} </span> ({{content.date}}) </p>
                 <p class="content-journey-section"> {{content.task}}</p>
               </div>
             </v-card>
@@ -154,11 +144,11 @@
               <img   v-bind="attrs" v-on="on"  :src="item.img"  class="planets-journey" :class="item.name">
             </template>
             <v-card width="500" class="pa-5 ">
-              <div class="py-2 px-5 d-flex justify-center" style="border-radius:0;margin:auto;background-color:#FFBF69;width:fit-content;height:fit-content">
-                <p class="title-journey-section " style="width:fit-content">{{item.year}}</p>
+              <div class="py-2 px-5 d-flex justify-center title-journey-section" >
+                <p class="title-journey " style="width:fit-content">{{item.year}}</p>
               </div>
               <div class="mb-2 mt-3" v-for="(content,j) in item.content" :key="j">
-                <p class="content-journey-section" > <span style="font-weight:600;font-size:1rem"> {{content.name}} </span> ({{content.date}}) </p>
+                <p class="content-journey-section" > <span style="font-weight:600"> {{content.name}} </span> ({{content.date}}) </p>
                 <p class="content-journey-section"> {{content.task}}</p>
               </div>
             </v-card>
@@ -166,42 +156,35 @@
         </div>
         <div  class="d-flex justify-center" v-if="$vuetify.breakpoint.width>600">
           <div   class="planets-line ">
-
           </div>
         </div>
-        
       </div>
-      
     </div>
 
-    <div id="whatido" class="whatIDo-section justify-center" style="">
-
+    <div id="whatido" class="whatIDo-section justify-center" >
       <div id="slideUp7" style="margin:auto;width:fit-content" class="mb-13 opacity-0">
-        <p  class="title-section text-center " style="position:relative;z-index:2"> WHAT I DO?</p>
-        <div style="position:relative">
-          <div class="d-flex justify-end" style="position:relative;bottom:20px;z-index:0;right:0">
-            <div style="width:90px;height:15px;background-color:#FFBF69;"></div>
+        <p  class="title-section text-center relative-position" style="z-index:2"> WHAT I DO?</p>
+        <div class="relative-position">
+          <div class="d-flex justify-end relative-position" style="bottom:20px;z-index:0;right:0">
+            <div class="whatido-line"></div>
           </div>
         </div>
       </div>
 
-      <div class=" d-flex justify-center" style="display:flex;flex-wrap:wrap">
+      <div class=" d-flex justify-center flex-wrap" >
         <v-card @click="goToWork(item.url)" class="d-flex justify-center pointer elevation-4 mx-4 my-4" v-for="(item,i) in kindOfWork" :key="i" width="250" height="320"> 
-          <div style="width:fit-content;height:fit-content;margin:auto" >
+          <div class="img-testimonial" >
             <img :src="item.img" :width="item.width">
             <p class="text-center testimonial-title"> {{item.name}}</p>
           </div>
-          
         </v-card>
-      </div>
-      
+      </div>      
     </div>
 
     <div id="recommendations" class="testimonials-section">
-      
       <img src="/bg-2.png" class="bg-recommendations"  width="100%">
       <div class="d-flex justify-center">
-        <p id="slideUp8" class="opacity-0 title-section title-recommendations text-center" style=""> WHAT <span style="color:#2EC4B6">PEOPLE SAY</span> ABOUT ME?</p>
+        <p id="slideUp8" class="opacity-0 title-section title-recommendations text-center" > WHAT <span style="color:#2EC4B6">PEOPLE SAY</span> ABOUT ME?</p>
       </div>
         <div class="card-recommendations">
           <v-card class="justify-center pa-8 elevation-5 rounded-xl" :width="$vuetify.breakpoint.width>768?'700':'80%'" style="margin:100px auto;">
@@ -215,8 +198,6 @@
             </div>
           </v-card>
         </div>
-        
-
     </div>
 
     <div class="footer-section">
@@ -855,9 +836,7 @@ export default {
     width:100%;
     padding: 100px
   }
-  .font-footer{
-    color : white;
-  }
+  
   .img-about{
     width:50%;
     position:relative
@@ -918,7 +897,7 @@ export default {
     height: 812px;
     position: relative;
   }
-  .title-journey-section{
+  .title-journey{
     font-weight: bold;
   }
   .content-journey-section{
@@ -950,4 +929,65 @@ export default {
     border: dashed 3px #14213D;
     top:212px
   }
+  .card-navbar{
+    position: fixed;
+    z-index: 99;
+    left: auto;
+    top: 50px;
+  }
+  .card-navbar-mobile{
+    z-index:99;
+    width:100%;
+    background-color:white
+  }
+  .fit-icon{
+    margin:auto 0 !important;
+    height:fit-content
+  }
+  
+  .sparkling-desktop{
+    position:absolute;
+    width:100%;
+    z-index:2;
+    top:200px
+  }
+  .alfiana-img-section{
+    position:absolute;
+    z-index:2
+  }
+  .alfiana-name-card{
+    z-index:3;
+    bottom:10px;
+    width:fit-content
+  }
+  
+  .line-journey{
+    width:325px;
+    height:15px;
+    background-color:#FFBF69;
+  }
+  .title-journey-section{
+    border-radius:0;
+    margin:auto;
+    background-color:#FFBF69;
+    width:fit-content;
+    height:fit-content
+  }
+  .img-testimonial{
+    width:fit-content;
+    height:fit-content;
+    margin:auto
+  }
+  .whatido-line{
+    width:90px;
+    height:15px;
+    background-color:#FFBF69;
+  }
+    .relative-position{
+    position:relative
+  }
+  .font-footer{
+    color: white;
+  }
+
 </style>
